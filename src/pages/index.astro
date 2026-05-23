@@ -1,17 +1,267 @@
 ---
-
+import Base from '../layout/Base.astro';
+import { enableSubscribeJS } from '../resource/variables.js';
 ---
+<Base>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="kicker">Monthly snail mail · Dubai</div>
+    <h1 class="hero-h1">
+      A letter<br>
+      for your<br>
+      <em>nervous system.</em>
+    </h1>
+    <p class="hero-p">
+      In a world that keeps getting louder, this is something quieter. A monthly envelope that arrives at your door — personal, warm, and made to remind you that you're not alone in how you feel.
+    </p>
+    {enableSubscribeJS && <div class="price-row">
+      <span class="price-amt">AED 55</span>
+      <span class="price-per">/ month · free delivery in Dubai</span>
+    </div>}
+    {enableSubscribeJS && <a href="#subscribe" class="btn-main">Subscribe now <span class="btn-arrow">→</span></a>}
+    <p class="hero-fine">Cancel anytime · No commitment · Delivered to your door</p>
+    <div class="hero-stats">
+      <div><span class="stat-val">100%</span><span class="stat-lbl">Dubai delivery</span></div>
+      <div><span class="stat-val">5 things</span><span class="stat-lbl">inside every envelope</span></div>
+      <div><span class="stat-val">Monthly</span><span class="stat-lbl">hand-packed</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="env-scene">
+      <div class="peek p1">
+        <div class="peek-lbl">🌿 This month's practice</div>
+        <div class="peek-txt">Extended exhale breathing — 2 minutes to settle your system…</div>
+      </div>
+      <div class="peek p2">
+        <div class="peek-lbl">📜 The letter</div>
+        <div class="peek-txt">Dear nervous system, I've been thinking about you…</div>
+      </div>
+      <div class="env-body">
+        <div class="env-sl"></div>
+        <div class="env-sr"></div>
+        <div class="env-seal"><span>dns</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"><span>🌿</span></div>
+
+<!-- WHAT'S INSIDE -->
+<section class="sec inside-sec" id="inside">
+  <div class="sec-inner">
+    <div class="eyebrow">Inside every envelope</div>
+    <h2 class="sec-h2">Everything your nervous system<br><em>actually needs</em></h2>
+    <p class="sec-sub">Not an app. Not a notification. Something you hold, open slowly, and return to all month long.</p>
+
+    <div class="inside-list">
+      <div class="inside-row">
+        <div class="inside-icon">📜</div>
+        <div>
+          <div class="inside-name">The monthly letter</div>
+          <div class="inside-desc">A personal, intimate letter written to you — not at you. Each one speaks to the universal feeling of trying to stay human in a world that keeps speeding up. Real words that make you feel less alone.</div>
+        </div>
+      </div>
+      <div class="inside-row">
+        <div class="inside-icon">🌿</div>
+        <div>
+          <div class="inside-name">Nervous system regulation card</div>
+          <div class="inside-desc">One evidence-based practice printed beautifully on card stock — breathwork, somatic, vagal toning. Step-by-step. Designed to live on your fridge, nightstand, or journal cover.</div>
+        </div>
+      </div>
+      <div class="inside-row">
+        <div class="inside-icon">✨</div>
+        <div>
+          <div class="inside-name">UAE wellbeing practice spotlight <span class="new-badge">new</span></div>
+          <div class="inside-desc">A curated highlight of a wellbeing or healing practice happening right here in the UAE — with an exclusive discount code for subscribers. Sound healing, breathwork, somatic therapy, cold plunge, and more. Something worth trying.</div>
+        </div>
+      </div>
+      <div class="inside-row">
+        <div class="inside-icon">🌙</div>
+        <div>
+          <div class="inside-name">Somatic prompt card</div>
+          <div class="inside-desc">Three body-based invitations to sit with during the month. Not journaling questions — felt sense prompts. The kind that actually shift something in you rather than just filling a page.</div>
+        </div>
+      </div>
+      <div class="inside-row">
+        <div class="inside-icon">🎁</div>
+        <div>
+          <div class="inside-name">A surprise goodie</div>
+          <div class="inside-desc">Something small, tactile, and meaningful. A worry stone, tea bag, seed packet, pressed flower, or affirmation sticker. Earthy, real, and chosen with care for the month's theme.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LETTER PREVIEW -->
+<section class="sec letter-sec" id="letter">
+  <div class="sec-inner">
+    <div class="eyebrow">A taste of the letter</div>
+    <h2 class="sec-h2">Written to make you feel<br><em>less alone</em></h2>
+    <p class="sec-sub">Every letter speaks to something true — the exhaustion, the longing for connection, the quiet courage it takes to keep healing in a noisy world.</p>
+
+    <div class="letter-paper">
+      <div class="letter-dt">July 2026 · Theme: Belong</div>
+      <div class="letter-greeting">Dear nervous system,</div>
+      <div class="letter-body">
+        <p>I've been thinking about loneliness lately. Not the kind where you're physically alone — but the kind you feel in a room full of people. The kind that lives in the scroll, in the curated feeds, in the group chats that somehow make you feel further from everyone rather than closer.</p>
+        <p>I don't think you're broken for feeling it. I think you're human. And I think your nervous system has been working incredibly hard trying to find safety in a world that increasingly asks us to perform our okayness rather than actually feel it.</p>
+        <p>This month, we're sitting with <em>belonging</em>. Not as something to achieve, but as something to remember. You belong to your body. You belong to this moment. You belong in the conversation of people who are quietly, courageously choosing to feel things rather than numb them.</p>
+        <p>That's who this letter is for. That's who you are.</p>
+      </div>
+      <div class="letter-sign">
+        With so much warmth,<br>
+        <span class="sname">Dear Nervous System ♡</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELLBEING HIGHLIGHT -->
+<section class="sec highlight-sec">
+  <div class="sec-inner">
+    <div class="eyebrow">UAE practice spotlight</div>
+    <h2 class="sec-h2">A new healing practice<br><em>every month</em></h2>
+    <p class="sec-sub">Each envelope features one UAE-based wellbeing practice worth knowing — with an exclusive discount just for subscribers.</p>
+
+    <div class="highlight-card">
+      <div class="h-eyebrow">July 2026 · Featured practice</div>
+      <div class="h-title">Sound Healing at Sohum, Al Quoz</div>
+      <div class="h-desc">Sound bowls work directly with the nervous system — the frequencies entrain your brainwaves into slower, more regulated states. It's one of the most effortless regulation practices available. You don't have to do anything but lie down and let the sound do the work.</div>
+      <div class="h-discount">
+        <div>
+          <div class="disc-label">Subscriber exclusive</div>
+          <div class="disc-code">DNS-JULY</div>
+        </div>
+        <div class="disc-pct">20% off your first session</div>
+      </div>
+      <p class="h-note">A new practice and code is featured each month — exclusively for Dear Nervous System subscribers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEELING -->
+<section class="feeling-sec">
+  <p class="feeling-q">Something arrived at my door just for my nervous system. I didn't know how much I needed to be seen until I read it.</p>
+  <div class="feeling-attr">The feeling we're creating — one envelope at a time</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" style="background: var(--white);">
+  <div class="sec-inner">
+    <div class="eyebrow">How it works</div>
+    <h2 class="sec-h2">As simple as<br><em>receiving a letter</em></h2>
+    <div class="steps">
+      <div>
+        <div class="step-num">01</div>
+        <div class="step-title">Subscribe & pay securely</div>
+        <div class="step-desc">Click subscribe, enter your card details via Stripe's secure checkout, and your subscription starts immediately. Apple Pay and Google Pay accepted.</div>
+      </div>
+      <div>
+        <div class="step-num">02</div>
+        <div class="step-title">We hand-pack your envelope</div>
+        <div class="step-desc">Each envelope is assembled by hand — your letter written, cards printed, goodie chosen for this month's theme and UAE spotlight.</div>
+      </div>
+      <div>
+        <div class="step-num">03</div>
+        <div class="step-title">Delivered to your door</div>
+        <div class="step-desc">Arrives the first week of each month anywhere in Dubai. You'll get a WhatsApp notification when it's on the way.</div>
+      </div>
+      <div>
+        <div class="step-num">04</div>
+        <div class="step-title">Cancel anytime, instantly</div>
+        <div class="step-desc">No forms, no phone calls. Cancel directly through the subscriber portal link in your confirmation email — or right here on this page.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+{enableSubscribeJS && <section class="subscribe-sec" id="subscribe">
+  <div class="subscribe-inner">
+    <h2 class="subscribe-h2">Subscribe for<br><em>AED 55 / month</em></h2>
+    <p class="subscribe-sub">Free Dubai delivery · Cancel anytime · Next batch ships July 1st<br>Billed automatically each month — no surprises</p>
+
+    <!-- Stripe option -->
+    <div id="stripeBox">
+      <div class="pay-note">
+        <strong>Fully automated</strong> — your card is charged AED 55 on the same date each month. Cancel instantly from the portal link in your confirmation email. Visa, Mastercard, Apple Pay, and Google Pay accepted.
+      </div>
+      <button class="btn-stripe">
+        <!-- Replace href with your real Stripe payment link -->
+        <a href="https://buy.stripe.com/YOUR_STRIPE_LINK" target="_blank" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
+          🔒 Subscribe securely — AED 55 / month
+        </a>
+      </button>
+      <div class="stripe-logos">
+        <span>Secured by Stripe</span>
+        <span>·</span>
+        <span>Visa</span>
+        <span>·</span>
+        <span>Mastercard</span>
+        <span>·</span>
+        <span>Apple Pay</span>
+        <span>·</span>
+        <span>Google Pay</span>
+      </div>
+    </div>
+
+    <!-- Cancel box -->
+    <div class="cancel-box">
+      <h4>Need to cancel?</h4>
+      <p>Cancel anytime — no questions asked. You can cancel instantly via the portal link in your confirmation email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-sec" id="faq">
+  <div class="sec-inner">
+    <div class="eyebrow">Questions</div>
+    <h2 class="sec-h2">Everything you need<br><em>to know</em></h2>
+    <div class="faq-wrap" style="margin-top:40px;">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How does billing work? <span class="faq-ico">+</span></div>
+        <div class="faq-a">Your card is charged AED 55 automatically on the same date each month via Stripe. You'll receive an email receipt after every payment.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How do I cancel? <span class="faq-ico">+</span></div>
+        <div class="faq-a">Card subscribers can cancel instantly at any time through the subscriber portal link included in your confirmation email — no forms, no phone calls, no questions asked. Cancellations are processed before your next billing date.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">When does my envelope arrive? <span class="faq-ico">+</span></div>
+        <div class="faq-a">Envelopes are delivered during the first week of each month across Dubai. You'll receive a WhatsApp notification when yours is dispatched. If you subscribe after the 20th of the month, your first envelope ships the following month.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is the UAE wellbeing spotlight? <span class="faq-ico">+</span></div>
+        <div class="faq-a">Each month we feature one wellness or healing practice available here in the UAE — sound healing, breathwork studios, somatic therapy, cold therapy, and more — along with an exclusive discount code for subscribers. It's curated specifically for people living and healing in this city.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">Is delivery only in Dubai? <span class="faq-ico">+</span></div>
+        <div class="faq-a">For now, yes — we're starting with Dubai to ensure every envelope arrives with care and on time. Abu Dhabi and wider UAE expansion is coming soon.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">Can I gift a subscription? <span class="faq-ico">+</span></div>
+        <div class="faq-a">Yes — subscribe using the recipient's delivery address and mention it's a gift in the Stripe checkout notes. We'll include a handwritten gift note from you inside the envelope.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">Is my payment secure? <span class="faq-ico">+</span></div>
+        <div class="faq-a">All card payments are processed by Stripe — the same payment infrastructure used by Amazon, Shopify, and millions of businesses globally. We never see or store your card details.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</Base>

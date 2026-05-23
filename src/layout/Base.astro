@@ -1,0 +1,48 @@
+---
+import { enableSubscribeJS, nextShip } from '../resource/variables.js';
+const pageTitle = "Dear Nervous System · Monthly Mail Club in Dubai";
+---
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{pageTitle}</title>
+<meta name="description" content="A monthly envelope of calm delivered to your door in Dubai. Personal letters, regulation cards, and healing practice highlights. AED 55/month. Cancel anytime.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="ann">✦ Next batch ships <strong>{nextShip}</strong> · Dubai delivery included · <strong>30 spots</strong> remaining this month</div>
+
+<nav>
+  <a href="#" class="logo">Dear Nervous System</a>
+  <div class="nav-links">
+    <a href="#inside" class="nav-a">What's inside</a>
+    <a href="#letter" class="nav-a">The letter</a>
+    <a href="#faq" class="nav-a">FAQ</a>
+    {enableSubscribeJS && <a href="#subscribe" class="nav-a nav-btn">Subscribe — AED 55</a>}
+  </div>
+</nav>
+
+<slot />
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Dear Nervous System</a>
+  <div class="footer-links">
+    {enableSubscribeJS && <a href="#subscribe">Subscribe</a>}
+    <a href="#faq">FAQ</a>
+    <a href="mailto:hello@dearnervoussystem.shop">Contact</a>
+  </div>
+  <div class="footer-r">
+    Monthly Mail Club · Dubai, UAE<br>
+    dearnervoussystem.shop
+  </div>
+</footer>
+
+{enableSubscribeJS && <script is:inline src="assets/js/subscribe.js"></script>}
+<script is:inline src="assets/js/main.js"></script>
+</body>
+</html>
