@@ -1,8 +1,72 @@
 ---
 import Base from '../layout/Base.astro';
 import { enableSubscribeJS } from '../resource/variables.js';
+
+const pageTitle = 'Dear Nervous System | Monthly Mail Club in Dubai';
+const pageDescription = 'Dear Nervous System is a monthly mail club in Dubai with personal letters, nervous system regulation cards, somatic prompts, and curated UAE wellbeing offers for AED 55/month.';
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Dear Nervous System Monthly Mail Club',
+  description: pageDescription,
+  brand: {
+    '@type': 'Brand',
+    name: 'Dear Nervous System',
+  },
+  areaServed: 'Dubai, UAE',
+  offers: {
+    '@type': 'Offer',
+    price: '55',
+    priceCurrency: 'AED',
+    availability: 'https://schema.org/InStock',
+    url: 'https://buy.stripe.com/bJe6oAaXcbew3KDcDD6kg03',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does billing work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Your card is charged AED 55 automatically on the same date each month via Stripe. You'll receive an email receipt after every payment.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I cancel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Card subscribers can cancel instantly through the subscriber portal link in the confirmation email. Cancellations are processed before your next billing date.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When does my envelope arrive?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Envelopes are delivered during the first week of each month across Dubai. If you subscribe after the 20th, your first envelope ships the following month.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is delivery only in Dubai?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "For now, yes. The service currently delivers in Dubai, with wider UAE expansion planned.",
+      },
+    },
+  ],
+};
 ---
-<Base>
+<Base title={pageTitle} description={pageDescription}>
+
+<script type="application/ld+json" set:html={JSON.stringify(productSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
 <!-- HERO -->
 <section class="hero">

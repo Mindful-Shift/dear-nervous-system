@@ -1,16 +1,69 @@
 ---
 import { enableSubscribeJS, nextShip } from '../resource/variables.js';
-const pageTitle = "Dear Nervous System · Monthly Mail Club in Dubai";
+const defaultTitle = 'Dear Nervous System | Monthly Mail Club in Dubai';
+const defaultDescription = 'A monthly envelope of calm delivered to your door in Dubai. Personal letters, regulation cards, and healing practice highlights. AED 55/month. Cancel anytime.';
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  ogType = 'website',
+} = Astro.props;
+
+const siteOrigin = (Astro.site?.toString() ?? 'https://dearnervoussystem.shop/').replace(/\/$/, '');
+const canonicalUrl = new URL(Astro.url.pathname, `${siteOrigin}/`).toString();
+const socialImage = `${siteOrigin}/favicon.svg`;
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Dear Nervous System',
+  url: siteOrigin,
+  inLanguage: 'en-AE',
+  description,
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Dear Nervous System',
+  url: siteOrigin,
+  email: 'dearnervoussystemmail@gmail.com',
+  areaServed: 'Dubai, UAE',
+};
 ---
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{pageTitle}</title>
-<meta name="description" content="A monthly envelope of calm delivered to your door in Dubai. Personal letters, regulation cards, and healing practice highlights. AED 55/month. Cancel anytime.">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#f5ebe0">
+
+<link rel="canonical" href={canonicalUrl}>
+<link rel="alternate" href={canonicalUrl} hreflang="en-ae">
+
+<meta property="og:type" content={ogType}>
+<meta property="og:site_name" content="Dear Nervous System">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonicalUrl}>
+<meta property="og:image" content={socialImage}>
+<meta property="og:locale" content="en_AE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={socialImage}>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
 </head>
 <body>
 
