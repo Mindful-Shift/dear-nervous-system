@@ -1,7 +1,7 @@
 ---
-import { enableSubscribeJS, nextShip } from '../resource/variables.js';
+import { enableSubscribeJS, nextShip, stripePaymentLink, priceAED } from '../resource/variables.js';
 const defaultTitle = 'Dear Nervous System | Monthly Mail Club in Dubai';
-const defaultDescription = 'A monthly envelope of calm delivered to your door in Dubai. Personal letters, regulation cards, and healing practice highlights. AED 55/month. Cancel anytime.';
+const defaultDescription = `A monthly envelope of calm delivered to your door in Dubai. Personal letters, regulation cards, and healing practice highlights. AED ${priceAED}/month. Cancel anytime.`;
 
 const {
   title = defaultTitle,
@@ -89,7 +89,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#inside" class="nav-a">What's inside</a>
     <a href="#letter" class="nav-a">The letter</a>
     <a href="#faq" class="nav-a">FAQ</a>
-    {enableSubscribeJS && <a href="https://buy.stripe.com/bJe6oAaXcbew3KDcDD6kg03" class="nav-a nav-btn">Subscribe — AED 55</a>}
+    {enableSubscribeJS && <a href={stripePaymentLink} class="nav-a nav-btn">Subscribe — AED {priceAED}</a>}
   </div>
 </nav>
 
@@ -99,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <a href="#" class="footer-logo">Dear Nervous System</a>
   <div class="footer-links">
-    {enableSubscribeJS && <a href="https://buy.stripe.com/bJe6oAaXcbew3KDcDD6kg03">Subscribe</a>}
+    {enableSubscribeJS && <a href={stripePaymentLink}>Subscribe</a>}
     <a href="#faq">FAQ</a>
     <a href="mailto:dns@dearnervoussystem.shop">Contact</a>
   </div>

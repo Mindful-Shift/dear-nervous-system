@@ -1,6 +1,6 @@
 ---
 import Base from '../layout/Base.astro';
-import { enableSubscribeJS } from '../resource/variables.js';
+import { enableSubscribeJS, stripePaymentLink, priceAED } from '../resource/variables.js';
 
 const pageTitle = 'Dear Nervous System | Monthly Mail Club in Dubai';
 const pageDescription = 'Dear Nervous System is a monthly mail club in Dubai with personal letters, nervous system regulation cards, somatic prompts, and curated UAE wellbeing offers for AED 55/month.';
@@ -17,10 +17,10 @@ const productSchema = {
   areaServed: 'Dubai, UAE',
   offers: {
     '@type': 'Offer',
-    price: '55',
+    price: priceAED,
     priceCurrency: 'AED',
     availability: 'https://schema.org/InStock',
-    url: 'https://buy.stripe.com/bJe6oAaXcbew3KDcDD6kg03',
+    url: stripePaymentLink,
   },
 };
 
@@ -33,7 +33,7 @@ const faqSchema = {
       name: 'How does billing work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Your card is charged AED 55 automatically on the same date each month via Stripe. You'll receive an email receipt after every payment.",
+        text: `Your card is charged AED ${priceAED} automatically on the same date each month via Stripe. You'll receive an email receipt after every payment.`,
       },
     },
     {
@@ -81,10 +81,10 @@ const faqSchema = {
       In a world that keeps getting louder, this is something quieter. A monthly envelope that arrives at your door. Personal, warm, and made to remind you that you're not alone in how you feel.
     </p>
     {enableSubscribeJS && <div class="price-row">
-      <span class="price-amt">AED 55</span>
+      <span class="price-amt">AED {priceAED}</span>
       <span class="price-per">/ month · free delivery in Dubai</span>
     </div>}
-    {enableSubscribeJS && <a href="https://buy.stripe.com/bJe6oAaXcbew3KDcDD6kg03" class="btn-main">Subscribe now <span class="btn-arrow">→</span></a>}
+    {enableSubscribeJS && <a href={stripePaymentLink} class="btn-main">Subscribe now <span class="btn-arrow">→</span></a>}
     <p class="hero-fine">Cancel anytime · No commitment · Delivered to your door</p>
     <div class="hero-stats">
       <div><span class="stat-val">100%</span><span class="stat-lbl">Dubai delivery</span></div>
@@ -240,18 +240,18 @@ const faqSchema = {
 <!-- SUBSCRIBE -->
 {enableSubscribeJS && <section class="subscribe-sec" id="subscribe">
   <div class="subscribe-inner">
-    <h2 class="subscribe-h2">Subscribe for<br><em>AED 55 / month</em></h2>
+    <h2 class="subscribe-h2">Subscribe for<br><em>AED {priceAED} / month</em></h2>
     <p class="subscribe-sub">Free Dubai delivery · Cancel anytime · Next batch ships July 1st<br>Billed automatically each month, no surprises</p>
 
     <!-- Stripe option -->
     <div id="stripeBox">
       <div class="pay-note">
-        <strong>Fully automated</strong>, your card is charged AED 55 on the same date each month. Cancel instantly from the portal link in your confirmation email. Visa, Mastercard, Apple Pay, and Google Pay accepted.
+        <strong>Fully automated</strong>, your card is charged AED {priceAED} on the same date each month. Cancel instantly from the portal link in your confirmation email. Visa, Mastercard, Apple Pay, and Google Pay accepted.
       </div>
       <button class="btn-stripe">
         
-        <a href="https://buy.stripe.com/bJe6oAaXcbew3KDcDD6kg03" target="_blank" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
-          🔒 Subscribe securely - AED 55 / month
+        <a href={stripePaymentLink} target="_blank" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
+          🔒 Subscribe securely - AED {priceAED} / month
         </a>
       </button>
       <div class="stripe-logos">
@@ -284,7 +284,7 @@ const faqSchema = {
 
       <div class="faq-item">
         <div class="faq-q" onclick="faq(this)">How does billing work? <span class="faq-ico">+</span></div>
-        <div class="faq-a">Your card is charged AED 55 automatically on the same date each month via Stripe. You'll receive an email receipt after every payment.</div>
+        <div class="faq-a">Your card is charged AED {priceAED} automatically on the same date each month via Stripe. You'll receive an email receipt after every payment.</div>
       </div>
 
       <div class="faq-item">
