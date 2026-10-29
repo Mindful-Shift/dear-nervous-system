@@ -1,5 +1,5 @@
 ---
-import { enableSubscribeJS, nextShip, stripePaymentLink, priceAED } from '../resource/variables.js';
+import { enableSubscribeJS, stripePaymentLink, priceAED } from '../resource/variables.js';
 const defaultTitle = 'Dear Nervous System | Monthly Mail Club in Dubai';
 const defaultDescription = `A monthly envelope of calm delivered to your door in Dubai. Personal letters, regulation cards, and healing practice highlights. AED ${priceAED}/month. Cancel anytime.`;
 
@@ -81,17 +81,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVMG7QX6"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<div class="ann">✦ Next batch ships <strong>{nextShip}</strong> · Dubai delivery included · <strong>30 spots</strong> remaining this month</div>
-
-<nav>
-  <a href="#" class="logo">Dear Nervous System</a>
-  <div class="nav-links">
-    <a href="#inside" class="nav-a">What's inside</a>
-    <a href="#letter" class="nav-a">The letter</a>
-    <a href="#faq" class="nav-a">FAQ</a>
-    {enableSubscribeJS && <a href={stripePaymentLink} class="nav-a nav-btn">Subscribe — AED {priceAED}</a>}
+<div id="pauseModal" class="pause-modal" aria-hidden="true">
+  <div class="pause-modal-backdrop" data-pause-close></div>
+  <div class="pause-modal-card" role="dialog" aria-modal="true" aria-labelledby="pauseModalText">
+    <button type="button" class="pause-modal-close" data-pause-close aria-label="Close">&times;</button>
+    <div class="eyebrow">A quiet pause</div>
+    <p id="pauseModalText" class="pause-modal-text">We're taking a quiet pause. New subscriptions aren't open right now, but we hope to be back soon.</p>
   </div>
-</nav>
+</div>
+<div class="sticky-head">
+  <div class="pay-banner">We're taking a quiet pause. New subscriptions aren't open right now, but we hope to be back soon.</div>
+  <nav>
+    <a href="#" class="logo">Dear Nervous System</a>
+    <div class="nav-links">
+      <a href="#inside" class="nav-a">What's inside</a>
+      <a href="#letter" class="nav-a">The letter</a>
+      <a href="#faq" class="nav-a">FAQ</a>
+      {enableSubscribeJS && <a href={stripePaymentLink} class="nav-a nav-btn">Subscribe for AED {priceAED}</a>}
+    </div>
+  </nav>
+</div>
 
 <slot />
 
@@ -111,5 +120,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 {enableSubscribeJS && <script is:inline src="assets/js/subscribe.js"></script>}
 <script is:inline src="assets/js/main.js"></script>
+<script is:inline src="assets/js/pause-modal.js"></script>
 </body>
 </html>
